@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Pluri\'elles SAS</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <header id="main-header"
+    class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 transition-all duration-300 shadow-sm">
+
+    <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+
+        <a href="index.php" class="flex items-center gap-3 group shrink-0">
+            <div class="w-25 h-13 bg-black flex items-center justify-center rounded-md transition-transform duration-300 group-hover:scale-105 border border-[#D4AF37]">
+                <img src="images/logo/logo-02.png" alt="Logo" class="h-full w-full object-contain">
+            </div>
+            <span class="text-xl font-black tracking-tighter text-black uppercase font-sans">
+                Pluri'elles <span class="text-[#D4AF37] italic">SAS</span>
+            </span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8">
+            <a href="index.html" class="font-bold text-black hover:text-[#D4AF37] transition-colors duration-200 py-2 relative group">
+                Accueil
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#D4AF37] transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="about.html" class="font-bold text-black hover:text-[#D4AF37] transition-colors duration-200 py-2 relative group">
+                Qui sommes-nous
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#D4AF37] transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="services.html" class="font-bold text-black hover:text-[#D4AF37] transition-colors duration-200 py-2 relative group">
+                Services
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#D4AF37] transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="news.html" class="font-bold text-black hover:text-[#D4AF37] transition-colors duration-200 py-2 relative group">
+                Actualités
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#D4AF37] transition-all duration-300 group-hover:w-full"></span>
+            </a>
+        </nav>
+
+        <div class="flex items-center gap-4">
+            <a href="contact.html"
+                class="hidden md:inline-flex bg-black text-[#D4AF37] border border-[#D4AF37] px-6 py-2 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#D4AF37] hover:mr-2 hover:text-black transition-all duration-300 shadow-md">
+                Nous contacter
+            </a>
+
+            <button id="menu-btn" type="button"
+                class="lg:hidden p-2 text-black hover:bg-gray-100 rounded-lg transition-colors">
+                <span id="menu-icon" class="material-symbols-outlined text-3xl">☰</span>
+            </button>
+        </div>
+    </div>
+
+    <div id="mobile-menu"
+        class="hidden lg:hidden bg-black text-white w-full absolute top-full left-0 border-t border-[#D4AF37]/30 shadow-2xl">
+        <div class="px-8 py-10 flex flex-col gap-6">
+            <a href="index.html" class="text-xl font-bold hover:text-[#D4AF37] transition-colors">Accueil</a>
+            <a href="about.html" class="text-xl font-bold hover:text-[#D4AF37] transition-colors">Qui sommes-nous</a>
+            <a href="services.html" class="text-xl font-bold hover:text-[#D4AF37] transition-colors">Services</a>
+            <a href="news.html" class="text-xl font-bold hover:text-[#D4AF37] transition-colors">Actualités</a>
+            
+            <hr class="border-[#D4AF37]/20 my-2">
+            
+            <a href="contact.html"
+                class="w-full text-center bg-[#D4AF37] text-black py-4 rounded-lg font-bold uppercase tracking-widest shadow-lg">
+                Nous contacter
+            </a>
+        </div>
+    </div>
+</header>
+
+<script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const icon = document.getElementById('menu-icon');
+
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        // Optionnel : changer l'icône de menu à "close" si vous utilisez Material Icons
+        icon.textContent = menu.classList.contains('hidden') ? '☰' : 'X';
+    });
+
+    // Fermer le menu si on clique à l'extérieur (optionnel mais recommandé)
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1024) {
+            menu.classList.add('hidden');
+            icon.textContent = 'menu';
+        }
+    });
+</script>
+
+    <!----------------------------------------------------------------------------------->
+
+
+    <section class="relative h-[450px] flex items-center justify-center mt-6">
+        <div class="absolute inset-0 overflow-hidden">
+            {{-- <img alt="Expertise RSE Pluri'elles" class="w-full h-full object-cover scale-105" src="images/banierre/crew.jpg" /> --}}
+
+            <div class="absolute inset-0 bg-slate-900/60"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-primary/80 via-transparent to-primary/90"></div>
+
+            <div class="absolute inset-0 opacity-10"
+                style="background-image: radial-gradient(#ffffff 0.5px, transparent 0.5px); background-size: 24px 24px;">
+            </div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <h1 class=" font-black text-3xl md:text-7xl text-white mb-4">
+                Nos <span class="text-[#D4AF37]">Services</span>
+            </h1>
+
+            <p class="mt-6 text-white/80 font-body text-xl max-w-2xl mx-auto leading-relaxed">
+                Des prestations RSE adaptées aux besoins des entreprises et des organisations de divers secteurs 
+            </p>
+        </div>
+
+        <div class="absolute bottom-0 left-0 w-full h-16 bg-surface clip-path-banner"></div>
+
+    </section>
+
+    <style>
+        .clip-path-banner {
+            clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 100%);
+        }
+    </style>
+    
+    <!--Notre Approche-->
+    <section class="py-5 bg-white px-6 pl-10 mb-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-left mb-10">
+                <h2 class="text-4xl md:text-4xl font-black text-black uppercase tracking-tighter">
+                    Notre <span class="">Approche</span>
+                </h2>
+                <p class="mt-4 text-gray-600 text-xl max-w-2xl ml-5 italic">
+                    Pluri’elles propose des prestations de conseil, d’accompagnement et d’appui 
+                    opérationnel pour aider les entreprises, les organisations ainsi que les acteurs 
+                    publics ou privés à structurer, déployer et suivre leur démarche RSE.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!--Notre Accompagnement-->
+    <section class="py-3 bg-white px-6 mb-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class=" text-4xl md:text-5xl font-black text-black uppercase tracking-tighter">
+                    Un accompagnement modulable, en fonction de <span class="text-[#D4AF37]">vos enjeux</span>
+                </h2>
+                <div class="w-full h-1.5 bg-black mx-auto mt-4"></div>
+                <p class="mt-4 text-gray-800 text-xl max-w-5xl mx-auto">
+                    Chaque organisation aborde la RSE à partir d’une situation particulière, liée à son activité, à son niveau d’avancement, 
+                    à ses ressources internes et aux attentes auxquelles elle doit répondre.
+                </p>
+                <p class="mt-4 text-gray-800 text-xl max-w-5xl mx-auto">
+                    Pluri’elles accompagne ses clients aux différentes étapes de leur démarche RSE, qu’il s’agisse d’initier une réflexion, 
+                    de structurer un cadre d’action, de consolider des pratiques existantes ou d’assurer un suivi plus régulier.
+                </p>
+                <p class="mt-4 text-gray-800 text-xl max-w-5xl mx-auto">
+                    Notre intervention a pour objet d’apporter des repères clairs, une méthode de travail adaptée et un appui opérationnel, 
+                    afin de permettre à nos clients d’inscrire leur démarche dans un cadre cohérent, lisible et durable.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!--Nos Prestations-->
+    <section class="py-15 bg-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-10 border-l-8 border-[#D4AF37] pl-8">
+                <h2 class="text-4xl md:text-5xl font-black text-black uppercase tracking-tighter">Nos <span class="text-[#D4AF37]">Prestations</span></h2>
+                <p class="text-gray-600 mt-4 max-w-2xl text-lg leading-relaxed">
+                    Nous accompagnons nos clients sur les principaux volets d’une démarche RSE, depuis l’analyse de l’existant jusqu’au suivi des actions engagées.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="group bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:bg-black transition-all duration-500 shadow-sm hover:shadow-2xl flex flex-col h-full">
+                    <h3 class="font-black text-xl mb-4 text-black group-hover:text-[#D4AF37] uppercase tracking-tight">Audit RSE</h3>
+                    <p class="text-gray-600 group-hover:text-gray-400 text-md text-justify leading-relaxed flex-grow">
+                        Nous assistons nos clients dans l’évaluation de leur situation au regard des enjeux RSE, en vue de leur permettre de disposer d’un état des lieux structuré 
+                        et exploitable.
+                    </p>
+                    <p class="text-gray-600 group-hover:text-gray-400 text-md text-justify leading-relaxed flex-grow mt-2">
+                        Cette prestation vise à analyser les pratiques existantes, à identifier les enjeux prioritaires et à mettre en évidence les points d’appui ainsi que les axes 
+                        de progression. Elle permet de disposer d’une base claire pour orienter la suite de la démarche et définir les premières priorités de travail.
+                    </p>
+                </div>
+
+                <div class="group bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:bg-black transition-all duration-500 shadow-sm hover:shadow-2xl flex flex-col h-full">
+                    <h3 class="font-black text-xl mb-4 text-black group-hover:text-[#D4AF37] uppercase tracking-tight">Sous-traitance RSE</h3>
+                    <p class="text-gray-600 group-hover:text-gray-400 text-md text-justify leading-relaxed flex-grow">
+                        Avec Plurielles SAS, libérez votre potentiel en nous confiant la gestion opérationnelle de votre stratégie RSE. De l'audit de conformité à la mise en œuvre 
+                        de vos engagements sociaux et environnementaux, nous agissons comme votre département RSE externalisé. Nous garantissons une traçabilité rigoureuse et un 
+                        impact mesurable pour renforcer votre image de marque.
+                    </p>
+                </div>
+
+                <div class="group bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:bg-black transition-all duration-500 shadow-sm hover:shadow-2xl flex flex-col h-full">
+                    <h3 class="font-black text-xl mb-4 text-black group-hover:text-[#D4AF37] uppercase tracking-tight">Structuration de la stratégie RSE</h3>
+                    <p class="text-gray-600 group-hover:text-gray-400 text-md text-justify leading-relaxed flex-grow">
+                        Nous accompagnons nos clients dans la définition des orientations de leur démarche RSE, afin de leur permettre de formaliser un cadre d’action cohérent avec leur activité, leur organisation et 
+                        leurs responsabilités.
+                    </p>
+                    <p class="text-gray-600 group-hover:text-gray-400 text-md text-justify leading-relaxed flex-grow mt-2">
+                        Notre intervention peut porter sur l’identification des enjeux structurants, la hiérarchisation des priorités, la formalisation des axes de travail et l’élaboration d’une feuille de route. 
+                        L’objectif est de permettre à l’organisation de disposer d’une stratégie claire, progressive et adaptée à sa réalité.
+                    </p>
+                </div>
+
+                <div class="group bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:bg-black transition-all duration-500 shadow-sm hover:shadow-2xl flex flex-col h-full">
+                    <h3 class="font-black text-xl mb-4 text-black group-hover:text-[#D4AF37] uppercase tracking-tight">Agence d'Exécution de Projets</h3>
+                    <p class="text-gray-600 group-hover:text-gray-400 text-md text-justify leading-relaxed flex-grow">
+                        Nous ne nous contentons pas de conseiller : nous exécutons. Que ce soit pour des projets de développement, des infrastructures ou des initiatives de terrain, Plurielles prend en charge 
+                        le pilotage intégral, la logistique et le suivi technique. Nous transformons vos cahiers des charges en résultats tangibles, dans le respect de vos délais et budgets.
+                    </p>
+                </div>
+
+                <div class="group bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:bg-black transition-all duration-500 shadow-sm hover:shadow-2xl flex flex-col h-full">
+                    <h3 class="font-black text-xl mb-4 text-black group-hover:text-[#D4AF37] uppercase tracking-tight">Accompagnement & Booster (Entrepreneuriat)</h3>
+                    <p class="text-gray-600 group-hover:text-gray-400 text-md text-justify leading-relaxed flex-grow">
+                        Plurielles SAS booste votre croissance, que vous soyez une start-up en création ou une société établie. Notre pôle offre un mentorat stratégique pour les 
+                        porteurs de projets et des solutions d'optimisation de services pour les entreprises existantes. Nous auditons vos processus et injectons l'innovation 
+                        nécessaire pour propulser vos performances vers de nouveaux sommets.
+                    </p>
+                </div>
+
+                <div class="group bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:bg-black transition-all duration-500 shadow-sm hover:shadow-2xl flex flex-col h-full">
+                    <h3 class="font-black text-xl mb-4 text-black group-hover:text-[#D4AF37] uppercase tracking-tight">Accompagnement à la conformité</h3>
+                    <p class="text-gray-600 group-hover:text-gray-400 text-md text-justify leading-relaxed flex-grow">
+                        Nous accompagnons nos clients dans la prise en compte de leurs obligations légales, réglementaires et contractuelles en matière de RSE, en vue de leur 
+                        permettre de mieux comprendre les exigences applicables et d’y répondre de manière structurée.
+                    </p>
+                    <p class="text-gray-600 group-hover:text-gray-400 text-md text-justify leading-relaxed flex-grow mt-2">
+                        Cet accompagnement a vocation à sécuriser certains volets de la démarche, à faciliter la formalisation des réponses attendues et à renforcer la cohérence 
+                        entre les engagements affichés, les pratiques existantes et les attentes externes.
+                    </p>
+                </div>
+                <div class="group bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:bg-black transition-all duration-500 shadow-sm hover:shadow-2xl flex flex-col h-full">
+                    <h3 class="font-black text-xl mb-4 text-black group-hover:text-[#D4AF37] uppercase tracking-tight">Assistance opérationnelle</h3>
+                    <p class="text-gray-600 group-hover:text-gray-400 text-md text-justify leading-relaxed flex-grow">
+                        Nous assistons nos clients dans la mise en œuvre de leur démarche RSE, afin de leur permettre d’assurer un suivi plus régulier des actions engagées et 
+                        de mieux organiser leur déploiement.
+                    </p>
+                    <p class="text-gray-600 group-hover:text-gray-400 text-md text-justify leading-relaxed flex-grow mt-2">
+                        Cette modalité d’intervention permet d’assurer une continuité dans le suivi, de renforcer l’organisation de la démarche et de soutenir les travaux 
+                        engagés dans la durée, selon un cadre souple et adapté aux besoins de la structure.
+                    </p>
+                </div>
+                <div class="group bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:bg-black transition-all duration-500 shadow-sm hover:shadow-2xl flex flex-col h-full">
+                    <h3 class="font-black text-xl mb-4 text-black group-hover:text-[#D4AF37] uppercase tracking-tight">Gestion externalisée de missions RSE</h3>
+                    <p class="text-gray-600 group-hover:text-gray-400 text-md text-justify leading-relaxed flex-grow">
+                        Nous accompagnons nos clients en assurant, de manière externalisée, tout ou partie de certaines missions RSE, en vue de leur permettre de bénéficier 
+                        d’un appui structuré sans mobiliser immédiatement une ressource dédiée en interne.
+                    </p>
+                    <p class="text-gray-600 group-hover:text-gray-400 text-md text-justify leading-relaxed flex-grow mt-2">
+                        Cette modalité d’intervention permet d’assurer une continuité dans le suivi, de renforcer l’organisation de la démarche et de soutenir les travaux 
+                        engagés dans la durée, selon un cadre souple et adapté aux besoins de la structure.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10 bg-gray-50 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-6 items-center">            
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-black text-black uppercase tracking-tighter leading-tight">
+                            Des modalités d’accompagnement <span class="text-[#D4AF37]">adaptées</span> à votre réalité
+                        </h2>
+                    </div>
+                    
+                    <div class="space-y-6 text-gray-600 text-lg leading-relaxed text-justify">
+                        <p>                        
+                            Nos prestations peuvent prendre la forme d’un appui ponctuel sur un besoin identifié, d’un accompagnement plus structurant 
+                            sur plusieurs étapes de la démarche ou d’une intervention suivie dans le temps.
+                        </p>
+                        <p>
+                            Nous adaptons notre niveau d’intervention à chaque contexte, qu’il s’agisse d’initier une démarche RSE, de la consolider, 
+                            de répondre à des exigences externes, d’en renforcer le pilotage ou d’en soutenir la mise en œuvre opérationnelle.
+                        </p>
+                        <p class="border-l-4 border-[#D4AF37] pl-6 italic bg-white p-6 shadow-sm rounded-r-xl">
+                            Cette souplesse d’intervention permet de proposer un accompagnement ajusté, proportionné et cohérent avec les besoins réels 
+                            de l’organisation.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid gap-6">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border-r-8 border-black group hover:ml-3 hover:bg-black transition-all duration-300">
+                        <h5 class="font-bold text-[#D4AF37] uppercase mb-2">01. Appui Ponctuel</h5>
+                        <p class="group-hover:text-gray-400">Expertise ciblée sur une mission ou un audit spécifique.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border-r-8 border-[#D4AF37] translate-x-4 group hover:mr-3  hover:bg-[#D4AF37] transition-all duration-300">
+                        <h5 class="font-bold text-black uppercase mb-2">02. Accompagnement Suivi</h5>
+                        <p class="group-hover:text-black/80">Présence régulière pour piloter vos projets dans la durée.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border-r-8 border-black group hover:ml-3  hover:bg-black transition-all duration-300">
+                        <h5 class="font-bold text-[#D4AF37] uppercase mb-2">03. Mise en œuvre</h5>
+                        <p class="group-hover:text-gray-400">Exécution opérationnelle totale de vos engagements RSE.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white px-6">
+        <div class="max-w-5xl mx-auto relative">
+            <div class="absolute inset-0 bg-gray-100 rounded-[4rem] -rotate-0 scale-105 hover:rotate-0"></div>
+            
+            <div class="relative z-10 p-12 md:p-20 text-center space-y-10">
+                <h2 class="font-black text-4xl md:text-6xl text-black uppercase tracking-tighter leading-none">
+                    Besoin d’un accompagnement <br class="hidden md:block"> 
+                    <span class="text-[#D4AF37]">sur-mesure</span> ?
+                </h2>
+                
+                <p class="text-gray-600 text-xl max-w-2xl mx-auto leading-relaxed">
+                    Pluri’elles vous accompagne dans la structuration, le déploiement et le suivi de votre démarche 
+                    RSE, selon vos enjeux et votre niveau d’avancement.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                    <a href="contact.html" 
+                    class="group relative inline-flex items-center justify-center bg-black text-[#D4AF37] px-12 py-6 rounded-full font-black text-lg uppercase tracking-widest overflow-hidden hover:bg-white hover:text-[#D4AF37] transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_20px_40px_rgba(0,0,0,0.2)]">
+                        <span class="relative z-10 flex items-center gap-3">
+                            Parlons de votre projet
+                            <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform"></span>
+                        </span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-------------------------------------------------------------------------------------------->
+    <footer class="bg-black text-white w-full pt-20 pb-10 px-8 border-t border-[#D4AF37]/20">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            
+            <div class="space-y-6">
+                <div class="flex flex-col">
+                    <h4 class="text-white font-black text-2xl uppercase tracking-tighter">
+                        Pluri’elles <span class="text-[#D4AF37] italic">SAS</span>
+                    </h4>
+                    <div class="w-12 h-1 bg-[#D4AF37] mt-2"></div>
+                </div>
+                <p class="text-gray-400 font-light text-sm leading-relaxed max-w-xs">
+                    Expertise en RSE et Gestion de projet pour une transformation durable et performante de vos activités en République Démocratique du Congo.
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <h5 class="text-[#D4AF37] text-xs font-bold tracking-[3px] uppercase mb-2">Navigation</h5>
+                <nav class="flex flex-col gap-3">
+                    <a href="index.php" class="text-gray-400 hover:text-[#D4AF37] text-sm transition-colors duration-300 flex items-center gap-2 group">
+                        <span class="w-0 h-px bg-[#D4AF37] transition-all duration-300 group-hover:w-4"></span>
+                        Accueil
+                    </a>
+                    <a href="about.php" class="text-gray-400 hover:text-[#D4AF37] text-sm transition-colors duration-300 flex items-center gap-2 group">
+                        <span class="w-0 h-px bg-[#D4AF37] transition-all duration-300 group-hover:w-4"></span>
+                        Qui sommes-nous
+                    </a>
+                    <a href="services.php" class="text-gray-400 hover:text-[#D4AF37] text-sm transition-colors duration-300 flex items-center gap-2 group">
+                        <span class="w-0 h-px bg-[#D4AF37] transition-all duration-300 group-hover:w-4"></span>
+                        Services
+                    </a>
+                    <a href="news.php" class="text-gray-400 hover:text-[#D4AF37] text-sm transition-colors duration-300 flex items-center gap-2 group">
+                        <span class="w-0 h-px bg-[#D4AF37] transition-all duration-300 group-hover:w-4"></span>
+                        Actualités
+                    </a>
+                </nav>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <h5 class="text-[#D4AF37] text-xs font-bold tracking-[3px] uppercase mb-2">Légal</h5>
+                <nav class="flex flex-col gap-3">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Mentions Légales</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Politique de Confidentialité</a>
+                </nav>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <h5 class="text-[#D4AF37] text-xs font-bold tracking-[3px] uppercase mb-2">contact</h5>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-[#D4AF37] text-sm">localisation:</span>
+                        <p class="text-gray-400 text-sm">
+                            Silikin Village - Cotex
+                            64 Col. Mondjiba, Ngaliema, Kinshasa - RD Congo Kinshasa, République Démocratique du Congo</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-[#D4AF37] text-sm">Email:</span>
+                        <a href="mailto:info@plurielles.cd" class="text-gray-400 hover:text-white text-sm transition-colors">info@plurielles.cd</a>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-[#D4AF37] text-sm">Telephone:</span>
+                        <a href="https://wa.me/243808663292?text=Bonjour%20je%20suis%20intéressé%20par%20vos%20services" class="text-gray-400 hover:text-white text-sm transition-colors">(+243) 808663292</a>
+                    </div>
+                </div>
+                <div class="flex gap-4 mt-4">
+                    <a href="#" class="w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:bg-[#D4AF37] hover:text-black transition-all duration-300 text-gray-400">
+                        <i class="fa-brands fa-linkedin-in"></i> <span class="material-symbols-outlined text-sm">share</span>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:bg-[#D4AF37] hover:text-black transition-all duration-300 text-gray-400">
+                        <span class="material-symbols-outlined text-sm">alternate_email</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="md:col-span-4 border-t border-white/5 mt-8 pt-8 text-center">
+                <p class="text-gray-600 text-[10px] tracking-[4px] uppercase font-medium">
+                    © 2026 <span class="text-gray-400">Pluri’elles SAS</span>. Expertise RSE &amp; Gestion de Projet.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
